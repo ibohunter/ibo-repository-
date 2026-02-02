@@ -1,15 +1,19 @@
 package main
 
 import (
-	"context"
 	"fmt"
-	"study/feature_postgres/simple_connection"
-	"study/feature_postgres/simple_sql"
-	"time"
+	"os"
 )
 
 func main() {
-	ctx := context.Background()
+	val := os.Getenv("phone_number")
+	if val != "" {
+		fmt.Println("val:", val)
+	} else {
+		fmt.Println("Переменная val не задана!")
+	}
+
+	/*ctx := context.Background()
 
 	conn, err := simple_connection.CreatConnection(ctx)
 	if err != nil {
@@ -42,5 +46,6 @@ func main() {
 		}
 	}
 
-	fmt.Println("succeed!")
+	fmt.Println("succeed!")*/
+
 }
